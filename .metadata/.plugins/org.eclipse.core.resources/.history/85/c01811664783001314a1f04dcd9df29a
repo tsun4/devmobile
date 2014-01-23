@@ -18,7 +18,9 @@ import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
- 
+	private static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 111;
+	private File mImage;
+	private Uri mUriSavedImage;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -119,6 +121,13 @@ public class MainActivity extends Activity {
 					// InputMethodManager mgr = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
 					// mgr.showSoftInput(img, InputMethodManager.SHOW_IMPLICIT);
 
+					// Replacement for deprecated official Android crop image
+					// function :
+					// - https://github.com/edmodo/cropper ****
+					// - https://github.com/biokys/cropimage
+					// - https://github.com/dtitov/pickncrop
+					// - https://github.com/lvillani/android-cropimage
+					// - https://github.com/lorensiuswlt/AndroidImageCrop
 				}
 			} else {
 				Log.e("Alain", "Invalid request code " + requestCode);
